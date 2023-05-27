@@ -1,0 +1,15 @@
+all: exec
+
+
+main.o : main.c header.h
+	gcc -c main.c -o main.o
+	
+fonction.o : fonction.c header.h
+	gcc -c fonction.c -o fonction.o
+	
+exec : main.o fonction.o
+	gcc *.o -o exec
+	
+clean : 
+	rm *.o
+	rm exec		
